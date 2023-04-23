@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  database:
+    image: docker.io/mariadb
+    restart: always
+    env_file: .env
+  backend:
+    build: .
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file: .env
+    entrypoint:
+      - "/usr/bin/npm"
+      - "run"
+      - "dev"
+    depends_on:
+      - database
