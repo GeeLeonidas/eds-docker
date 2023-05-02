@@ -2,7 +2,8 @@
 1. Clone o repositório com `git clone https://github.com/GeeLeonidas/eds-docker.git`
 2. Copie `.env.sample` com o nome de `.env` e edite-o, inserindo os devidos nomes e senhas
 3. Execute o comando `docker compose up`
-4. Pronto!
+4. Em outro terminal, execute duas vezes `docker exec -it eds-docker-backend-1 /usr/bin/npx knex migrate:up`
+5. Pronto!
 
 Obs.: para acessar o MariaDB diretamente é necessário utilizar o comando `docker exec`
 ```bash
